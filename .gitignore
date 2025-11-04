@@ -34,3 +34,11 @@ build/
 
 # Ignore local properties file
 application-local.properties
+
+# Local Spring config with secrets
+src/main/resources/application-local.properties
+src/main/resources/*-local.properties
+
+# Common env files
+.env
+.env.*

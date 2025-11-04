@@ -1,119 +1,91 @@
-☕ Coffee Collection API
+## ☕ Coffee Collection API
 
-This is a simple RESTful API built with Spring Boot to create, read, update, and delete entries in a personal coffee collection.
+A simple RESTful API built with Spring Boot to create, read, update, and delete entries in a personal coffee collection.
 
-This project was created as a learning exercise to understand the fundamentals of:
+### What this project demonstrates
+- **Java 17**
+- **Spring Boot**
+- **Spring Data JPA (Hibernate)**
+- **REST API design**
+- **PostgreSQL**
+- **Maven**
 
-Java
+## 🚀 How to run locally
 
-Spring Boot
+### Prerequisites
+- **Java 17+**
+- **Maven** (or use the included Maven Wrapper `mvnw`/`mvnw.cmd`)
+- **PostgreSQL** running locally
 
-Spring Data JPA (Hibernate)
-
-REST API design
-
-PostgreSQL
-
-Maven
-
-🚀 How to Run Locally
-
-Prerequisites
-
-Java (17 or newer)
-
-Maven
-
-A running PostgreSQL server
-
-Setup Instructions
-
-Clone the Repository:
-
-git clone [https://github.com/stefbou9/CoffeeCollectionAPI.git](https://github.com/stefbou9/CoffeeCollectionAPI.git)
+### 1) Clone the repository
+```bash
+git clone https://github.com/stefbou9/CoffeeCollectionAPI.git
 cd CoffeeCollectionAPI
+```
 
-
-Configure Database:
-
-Ensure your PostgreSQL server is running (e.g., on localhost:5432).
-
-Create a new database for the project (e.g., CREATE DATABASE "CoffeeCollectionDB";).
-
-Create a file at src/main/resources/application-local.properties to store your local credentials (this file is ignored by Git).
-
-Add your database username and password to this new file:
-
+### 2) Configure the database
+- Ensure PostgreSQL is running (default: `localhost:5432`).
+- Create the database:
+```sql
+CREATE DATABASE "CoffeeCollectionDB";
+```
+- Create `src/main/resources/application-local.properties` for local secrets (git-ignored):
+```properties
 # src/main/resources/application-local.properties
 spring.datasource.username=your_postgres_username
 spring.datasource.password=your_postgres_password
+```
 
+This project uses the `local` profile by default for development (`spring.profiles.active=local`).
 
-Run the Application:
+### 3) Run the application
+- From your IDE: run `CoffeeCollectionApiApplication`.
+- Or via terminal (Maven Wrapper):
+```bash
+# Windows
+./mvnw.cmd spring-boot:run
 
-Run the app directly from your IDE by executing the CoffeeCollectionApiApplication.java file.
-
-Alternatively, use the Maven wrapper from your terminal:
-
-# On Windows
+# macOS/Linux
 ./mvnw spring-boot:run
+```
 
-# On macOS/Linux
-./mvnw spring-boot:run
+The API will be available at `http://localhost:8080`.
 
+## ⚙️ API Endpoints
+Base URL: `http://localhost:8080`
 
-The API will start and be available at http://localhost:8080.
+- **POST** `/api/coffees` — Add a new coffee
+- **GET** `/api/coffees` — List all coffees
+- **GET** `/api/coffees/{id}` — Get a coffee by ID
+- **PUT** `/api/coffees/{id}` — Update a coffee by ID
+- **DELETE** `/api/coffees/{id}` — Delete a coffee by ID
 
-⚙️ API Endpoints
-
-All endpoints are relative to the base URL: http://localhost:8080
-
-Method
-
-Endpoint
-
-Description
-
-POST
-
-/api/coffees
-
-Adds a new coffee to the collection.
-
-GET
-
-/api/coffees
-
-Retrieves a list of all coffees.
-
-GET
-
-/api/coffees/{id}
-
-Retrieves a single coffee by its ID.
-
-PUT
-
-/api/coffees/{id}
-
-Updates an existing coffee by its ID.
-
-DELETE
-
-/api/coffees/{id}
-
-Deletes a coffee by its ID.
-
-Example JSON Body
-
-Use this format for POST /api/coffees and PUT /api/coffees/{id} requests.
-
+### Example request body
+Use this format for `POST /api/coffees` and `PUT /api/coffees/{id}`.
+```json
 {
-"name": "Yirgacheffe",
-"origin": "Ethiopia",
-"roast": "LIGHT",
-"price": 22.50,
-"tastingNotes": "Blueberry, lemon, floral"
+  "name": "Yirgacheffe",
+  "origin": "Ethiopia",
+  "roast": "LIGHT",
+  "price": 22.50,
+  "tastingNotes": "Blueberry, lemon, floral"
 }
+```
 
-Roast options are: LIGHT, MEDIUM, DARK.
+Roast options: `LIGHT`, `MEDIUM`, `DARK`.
+
+## 🧰 Configuration
+Key properties (see `src/main/resources/application.properties`):
+```properties
+spring.application.name=CoffeeCollectionAPI
+spring.profiles.active=local
+spring.datasource.url=jdbc:postgresql://localhost:5432/CoffeeCollectionDB
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+For local secrets, use `application-local.properties` as shown above, or environment variables.
+
+## 📄 License
+This repository is for learning purposes.
