@@ -32,8 +32,19 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(new org.springframework.security.web.util.matcher.AntPathRequestMatcher(
+                                "/v3/api-docs/**"))
+                        .permitAll()
+                        .requestMatchers(new org.springframework.security.web.util.matcher.AntPathRequestMatcher(
+                                "/swagger-ui/**"))
+                        .permitAll()
+                        .requestMatchers(new org.springframework.security.web.util.matcher.AntPathRequestMatcher(
+                                "/swagger-ui.html"))
+                        .permitAll()
+                        .requestMatchers(
+                                new org.springframework.security.web.util.matcher.AntPathRequestMatcher("/error"))
+                        .permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/api/coffees/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session

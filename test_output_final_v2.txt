@@ -1,0 +1,164 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.example:CoffeeCollectionAPI >-------------------
+[INFO] Building CoffeeCollectionAPI 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ CoffeeCollectionAPI ---
+[INFO] Deleting C:\Users\stefb\IdeaProjects\SpringBootLearningProjects\CoffeeCollectionAPI\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ CoffeeCollectionAPI ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ CoffeeCollectionAPI ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 18 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ CoffeeCollectionAPI ---
+[INFO] skip non existing resourceDirectory C:\Users\stefb\IdeaProjects\SpringBootLearningProjects\CoffeeCollectionAPI\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ CoffeeCollectionAPI ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ CoffeeCollectionAPI ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.example.coffeecollectionapi.AuthControllerTest
+18:26:29.508 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.coffeecollectionapi.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:26:29.685 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.coffeecollectionapi.CoffeeCollectionApiApplication for test class org.example.coffeecollectionapi.AuthControllerTest
+18:26:29.894 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-11-19T18:26:30.316+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.e.c.AuthControllerTest                 : Starting AuthControllerTest using Java 23.0.2 with PID 26408 (started by stefb in C:\Users\stefb\IdeaProjects\SpringBootLearningProjects\CoffeeCollectionAPI)
+2025-11-19T18:26:30.317+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.e.c.AuthControllerTest                 : The following 1 profile is active: "local"
+2025-11-19T18:26:31.397+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-19T18:26:31.475+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2025-11-19T18:26:32.358+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-11-19T18:26:32.373+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-19T18:26:32.374+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-11-19T18:26:32.441+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-19T18:26:32.443+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2098 ms
+2025-11-19T18:26:32.746+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-19T18:26:32.962+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-11-19T18:26:33.067+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-19T18:26:33.445+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-19T18:26:33.484+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-19T18:26:33.681+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@26d24d7a
+2025-11-19T18:26:33.683+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-19T18:26:33.727+02:00  WARN 26408 --- [CoffeeCollectionAPI] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-19T18:26:34.717+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-19T18:26:34.767+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-19T18:26:35.180+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-11-19T18:26:35.181+02:00  WARN 26408 --- [CoffeeCollectionAPI] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-11-19T18:26:35.324+02:00  WARN 26408 --- [CoffeeCollectionAPI] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-19T18:26:36.209+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 49771 (http) with context path '/'
+2025-11-19T18:26:36.226+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.e.c.AuthControllerTest                 : Started AuthControllerTest in 6.35 seconds (process running for 7.586)
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+2025-11-19T18:26:36.911+02:00  INFO 26408 --- [CoffeeCollectionAPI] [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-19T18:26:36.912+02:00  INFO 26408 --- [CoffeeCollectionAPI] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-19T18:26:36.912+02:00  INFO 26408 --- [CoffeeCollectionAPI] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.307 s -- in org.example.coffeecollectionapi.AuthControllerTest
+[INFO] Running org.example.coffeecollectionapi.CoffeeCollectionApiApplicationTests
+2025-11-19T18:26:37.622+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.example.coffeecollectionapi.CoffeeCollectionApiApplicationTests]: CoffeeCollectionApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-19T18:26:37.623+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.example.coffeecollectionapi.CoffeeCollectionApiApplication for test class org.example.coffeecollectionapi.CoffeeCollectionApiApplicationTests
+2025-11-19T18:26:37.637+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-11-19T18:26:37.676+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .e.c.CoffeeCollectionApiApplicationTests : Starting CoffeeCollectionApiApplicationTests using Java 23.0.2 with PID 26408 (started by stefb in C:\Users\stefb\IdeaProjects\SpringBootLearningProjects\CoffeeCollectionAPI)
+2025-11-19T18:26:37.677+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .e.c.CoffeeCollectionApiApplicationTests : The following 1 profile is active: "local"
+2025-11-19T18:26:37.913+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-19T18:26:37.934+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2025-11-19T18:26:38.018+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-19T18:26:38.021+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-19T18:26:38.032+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-19T18:26:38.034+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-11-19T18:26:38.080+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5d796665
+2025-11-19T18:26:38.081+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-11-19T18:26:38.090+02:00  WARN 26408 --- [CoffeeCollectionAPI] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-19T18:26:38.145+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-19T18:26:38.165+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-19T18:26:38.198+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-11-19T18:26:38.199+02:00  WARN 26408 --- [CoffeeCollectionAPI] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-11-19T18:26:38.244+02:00  WARN 26408 --- [CoffeeCollectionAPI] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-19T18:26:38.465+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .e.c.CoffeeCollectionApiApplicationTests : Started CoffeeCollectionApiApplicationTests in 0.825 seconds (process running for 9.825)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.872 s -- in org.example.coffeecollectionapi.CoffeeCollectionApiApplicationTests
+[INFO] Running org.example.coffeecollectionapi.CoffeeControllerSecurityTest
+2025-11-19T18:26:38.499+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [org.example.coffeecollectionapi.CoffeeControllerSecurityTest]: CoffeeControllerSecurityTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-19T18:26:38.502+02:00  INFO 26408 --- [CoffeeCollectionAPI] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration org.example.coffeecollectionapi.CoffeeCollectionApiApplication for test class org.example.coffeecollectionapi.CoffeeControllerSecurityTest
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select c1_0.id,c1_0.name,c1_0.origin,c1_0.price,c1_0.roast,c1_0.tasting_notes from coffees c1_0
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+2025-11-19T18:26:39.277+02:00  INFO 26408 --- [CoffeeCollectionAPI] [o-auto-1-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 201 ms
+Swagger Response Status: 200 OK
+Swagger Response Body: {"openapi":"3.0.1","info":{"title":"Coffee Collection API","description":"API for managing a collection of coffees","version":"1.0"},"servers":[{"url":"http://localhost:49771","description":"Generated server url"}],"paths":{"/api/coffees/{id}":{"get":{"tags":["coffee-controller"],"operationId":"getCoffeeById","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer","format":"int64"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/CoffeeDTO"}}}}}},"put":{"tags":["coffee-controller"],"operationId":"updateCoffee","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer","format":"int64"}}],"requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/CoffeeDTO"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/CoffeeDTO"}}}}}},"delete":{"tags":["coffee-controller"],"operationId":"deleteCoffee","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer","format":"int64"}}],"responses":{"200":{"description":"OK"}}}},"/api/coffees":{"get":{"tags":["coffee-controller"],"operationId":"getAllCoffees","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"array","items":{"$ref":"#/components/schemas/CoffeeDTO"}}}}}}},"post":{"tags":["coffee-controller"],"operationId":"createCoffee","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/CoffeeDTO"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/CoffeeDTO"}}}}}}},"/api/auth/register":{"post":{"tags":["auth-controller"],"operationId":"registerUser","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/AuthenticationRequest"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"object"}}}}}}},"/api/auth/login":{"post":{"tags":["auth-controller"],"operationId":"createAuthenticationToken","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/AuthenticationRequest"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"object"}}}}}}}},"components":{"schemas":{"CoffeeDTO":{"required":["name","origin","price","roast"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"origin":{"type":"string"},"roast":{"type":"string","enum":["LIGHT","MEDIUM","DARK"]},"price":{"type":"number"},"tastingNotes":{"type":"string"}}},"AuthenticationRequest":{"type":"object","properties":{"username":{"type":"string"},"password":{"type":"string"}}}},"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}}}
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0
+Hibernate: delete from app_users where id=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: insert into app_users (password,role,username) values (?,?,?) returning id
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+Hibernate: select u1_0.id,u1_0.password,u1_0.role,u1_0.username from app_users u1_0 where u1_0.username=?
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.126 s -- in org.example.coffeecollectionapi.CoffeeControllerSecurityTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.256 s
+[INFO] Finished at: 2025-11-19T18:26:39+02:00
+[INFO] ------------------------------------------------------------------------

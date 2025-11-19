@@ -19,7 +19,7 @@ A robust RESTful API built with Spring Boot to manage a personal coffee collecti
 ## 🛠️ Tech Stack
 
 -   **Java 17**
--   **Spring Boot 3** (Web, Data JPA, Security, Validation)
+-   **Spring Boot 3.3.5** (Web, Data JPA, Security, Validation)
 -   **PostgreSQL**
 -   **Docker & Docker Compose**
 -   **Maven**

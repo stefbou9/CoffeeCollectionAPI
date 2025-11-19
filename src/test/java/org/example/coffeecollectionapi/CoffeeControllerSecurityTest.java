@@ -95,4 +95,12 @@ public class CoffeeControllerSecurityTest {
         // Should be Forbidden because only ROLE_ADMIN can delete
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
     }
+
+    @Test
+    public void swaggerEndpoint_ShouldBeAccessible() {
+        ResponseEntity<String> response = restTemplate.getForEntity("/v3/api-docs", String.class);
+        System.out.println("Swagger Response Status: " + response.getStatusCode());
+        System.out.println("Swagger Response Body: " + response.getBody());
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
 }
