@@ -1,91 +1,94 @@
-## ☕ Coffee Collection API
+# ☕ Coffee Collection API
 
-A simple RESTful API built with Spring Boot to create, read, update, and delete entries in a personal coffee collection.
+A robust RESTful API built with Spring Boot to manage a personal coffee collection. This project demonstrates modern Java development practices, including secure authentication, role-based access control, and containerization.
 
-### What this project demonstrates
-- **Java 17**
-- **Spring Boot**
-- **Spring Data JPA (Hibernate)**
-- **REST API design**
-- **PostgreSQL**
-- **Maven**
+## 🚀 Features
 
-## 🚀 How to run locally
+-   **CRUD Operations**: Create, Read, Update, and Delete coffee entries.
+-   **Security**:
+    -   **JWT Authentication**: Stateless authentication using JSON Web Tokens.
+    -   **Database Authentication**: Users stored in PostgreSQL with BCrypt password encryption.
+    -   **Role-Based Access Control (RBAC)**:
+        -   `ROLE_USER`: Can view and add coffees.
+        -   `ROLE_ADMIN`: Can delete coffees.
+-   **Validation**: Input validation using Bean Validation (JSR 380).
+-   **Documentation**: Interactive API documentation via Swagger UI / OpenAPI.
+-   **Containerization**: Fully dockerized application and database using Docker Compose.
+-   **Architecture**: Layered architecture (Controller, Service, Repository) with DTOs.
+
+## 🛠️ Tech Stack
+
+-   **Java 17**
+-   **Spring Boot 3** (Web, Data JPA, Security, Validation)
+-   **PostgreSQL**
+-   **Docker & Docker Compose**
+-   **Maven**
+
+## 🏁 Getting Started
 
 ### Prerequisites
-- **Java 17+**
-- **Maven** (or use the included Maven Wrapper `mvnw`/`mvnw.cmd`)
-- **PostgreSQL** running locally
 
-### 1) Clone the repository
+-   **Docker** (Recommended)
+-   **Java 17+** & **Maven** (If running locally without Docker)
+
+### Option 1: Run with Docker (Easiest)
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/stefbou9/CoffeeCollectionAPI.git
+    cd CoffeeCollectionAPI
+    ```
+
+2.  **Start the application**:
+    ```bash
+    docker-compose up --build
+    ```
+    This will start both the API (port 8080) and the PostgreSQL database (port 5432).
+
+3.  **Access the API**:
+    The API will be available at `http://localhost:8080`.
+
+### Option 2: Run Locally with Maven
+
+1.  **Ensure PostgreSQL is running** and create a database named `coffee_db`.
+2.  **Configure Database**:
+    Update `src/main/resources/application.properties` or set environment variables:
+    ```properties
+    spring.datasource.url=jdbc:postgresql://localhost:5432/coffee_db
+    spring.datasource.username=postgres
+    spring.datasource.password=postgres
+    ```
+3.  **Run the application**:
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+
+## 📖 API Documentation
+
+Once the application is running, you can access the interactive Swagger UI documentation at:
+
+👉 **[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)**
+
+### Authentication Flow
+1.  **Register**: POST `/api/auth/register` with `username` and `password`.
+2.  **Login**: POST `/api/auth/login` to receive a JWT.
+3.  **Authorize**: Click the "Authorize" button in Swagger UI and enter `Bearer <your_token>`.
+
+## 🧪 Running Tests
+
+To run the automated test suite (Unit & Integration tests):
+
 ```bash
-git clone https://github.com/stefbou9/CoffeeCollectionAPI.git
-cd CoffeeCollectionAPI
+./mvnw test
 ```
 
-### 2) Configure the database
-- Ensure PostgreSQL is running (default: `localhost:5432`).
-- Create the database:
-```sql
-CREATE DATABASE "CoffeeCollectionDB";
-```
-- Create `src/main/resources/application-local.properties` for local secrets (git-ignored):
-```properties
-# src/main/resources/application-local.properties
-spring.datasource.username=your_postgres_username
-spring.datasource.password=your_postgres_password
-```
+## 🔒 Security Roles
 
-This project uses the `local` profile by default for development (`spring.profiles.active=local`).
-
-### 3) Run the application
-- From your IDE: run `CoffeeCollectionApiApplication`.
-- Or via terminal (Maven Wrapper):
-```bash
-# Windows
-./mvnw.cmd spring-boot:run
-
-# macOS/Linux
-./mvnw spring-boot:run
-```
-
-The API will be available at `http://localhost:8080`.
-
-## ⚙️ API Endpoints
-Base URL: `http://localhost:8080`
-
-- **POST** `/api/coffees` — Add a new coffee
-- **GET** `/api/coffees` — List all coffees
-- **GET** `/api/coffees/{id}` — Get a coffee by ID
-- **PUT** `/api/coffees/{id}` — Update a coffee by ID
-- **DELETE** `/api/coffees/{id}` — Delete a coffee by ID
-
-### Example request body
-Use this format for `POST /api/coffees` and `PUT /api/coffees/{id}`.
-```json
-{
-  "name": "Yirgacheffe",
-  "origin": "Ethiopia",
-  "roast": "LIGHT",
-  "price": 22.50,
-  "tastingNotes": "Blueberry, lemon, floral"
-}
-```
-
-Roast options: `LIGHT`, `MEDIUM`, `DARK`.
-
-## 🧰 Configuration
-Key properties (see `src/main/resources/application.properties`):
-```properties
-spring.application.name=CoffeeCollectionAPI
-spring.profiles.active=local
-spring.datasource.url=jdbc:postgresql://localhost:5432/CoffeeCollectionDB
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-```
-
-For local secrets, use `application-local.properties` as shown above, or environment variables.
+-   **User**: Can read (`GET`) and create (`POST`, `PUT`) coffees.
+    -   *Default role for new registrations.*
+-   **Admin**: Has all User permissions plus the ability to `DELETE` coffees.
+    -   *Note: Currently, roles must be manually assigned in the database or via a seed script.*
 
 ## 📄 License
-This repository is for learning purposes.
+
+This project is for learning purposes.
