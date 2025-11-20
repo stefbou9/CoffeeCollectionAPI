@@ -17,6 +17,7 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("Coffee Collection API")
                         .version("1.0")
-                        .description("API for managing a collection of coffees"));
+                        .description("API for managing a collection of coffees"))
+                .addSecurityItem(new io.swagger.v3.oas.models.security.SecurityRequirement().addList("bearerAuth"));
     }
 }
