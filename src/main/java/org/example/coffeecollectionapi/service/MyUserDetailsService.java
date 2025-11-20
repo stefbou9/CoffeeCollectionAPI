@@ -2,6 +2,8 @@ package org.example.coffeecollectionapi.service;
 
 import org.example.coffeecollectionapi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,14 +15,23 @@ import java.util.ArrayList;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
+    private final UserRepository userRepository;
+
     @Autowired
-    private UserRepository userRepository;
+    public MyUserDetailsService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         org.example.coffeecollectionapi.model.User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
 
-        return new User(user.getUsername(), user.getPassword(), new ArrayList<>());
+        java.util.List<GrantedAuthority> authorities = new ArrayList<>();
+        if (user.getRole() != null) {
+            authorities.add(new SimpleGrantedAuthority(user.getRole()));
+        }
+
+        return new User(user.getUsername(), user.getPassword(), authorities);
     }
 }

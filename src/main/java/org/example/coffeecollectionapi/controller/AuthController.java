@@ -2,6 +2,8 @@ package org.example.coffeecollectionapi.controller;
 
 import org.example.coffeecollectionapi.model.AuthenticationRequest;
 import org.example.coffeecollectionapi.model.AuthenticationResponse;
+import org.example.coffeecollectionapi.model.User;
+import org.example.coffeecollectionapi.repository.UserRepository;
 import org.example.coffeecollectionapi.service.MyUserDetailsService;
 import org.example.coffeecollectionapi.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,20 +22,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
+    private final MyUserDetailsService userDetailsService;
+    private final JwtUtil jwtUtil;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    private MyUserDetailsService userDetailsService;
-
-    @Autowired
-    private JwtUtil jwtUtil;
-
-    @Autowired
-    private org.example.coffeecollectionapi.repository.UserRepository userRepository;
-
-    @Autowired
-    private org.springframework.security.crypto.password.PasswordEncoder passwordEncoder;
+    public AuthController(AuthenticationManager authenticationManager,
+            MyUserDetailsService userDetailsService,
+            JwtUtil jwtUtil,
+            UserRepository userRepository,
+            PasswordEncoder passwordEncoder) {
+        this.authenticationManager = authenticationManager;
+        this.userDetailsService = userDetailsService;
+        this.jwtUtil = jwtUtil;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
@@ -59,7 +66,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Username is already taken");
         }
 
-        org.example.coffeecollectionapi.model.User newUser = new org.example.coffeecollectionapi.model.User();
+        User newUser = new User();
         newUser.setUsername(registrationRequest.getUsername());
         newUser.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
         newUser.setRole("ROLE_USER");

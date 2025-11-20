@@ -31,8 +31,9 @@ public class CoffeeController {
 
     // 2. READ (All)
     @GetMapping
-    public List<CoffeeDTO> getAllCoffees() {
-        return service.getAllCoffees();
+    public ResponseEntity<List<CoffeeDTO>> getAllCoffees() {
+        List<CoffeeDTO> coffees = service.getAllCoffees();
+        return ResponseEntity.ok(coffees);
     }
 
     // 3. READ (One by ID)
